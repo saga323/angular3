@@ -1,0 +1,28 @@
+<div class="container my-5 d-flex flex-column align-items-center" *ngIf="!isFormVisible">
+  <div *ngFor="let post of posts" class="mb-4">
+    <div class="card" style="width: 500px;">
+      <div class="card-header d-flex align-items-center">
+        <img [src]="post.userImage" alt="User" width="40" height="40" class="rounded-circle me-2">
+        <strong>{{ post.userName }}</strong>
+
+        <button class="btn butn-delete ms-auto" (click)="post.id !== undefined && deletePost(post.id)">
+          <img src="assets/icon/14974663671582988848.svg" width="30" alt="Delete icon">
+        </button>
+      </div>
+
+      <img [src]="post.postImage" class="card-img-top" alt="Post Image">
+
+      <div class="card-body">
+        <p class="card-text">{{ post.postDescription }}</p>
+
+        <button class="btn btn-outline-primary w-100" (click)="toggleLike(post)">
+          {{ post.liked ? 'Unlike' : 'Like' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-success mb-3 add-post-button" (click)="showForm()">+</button>
+</div>
+
+<app-post-form *ngIf="isFormVisible" (postAdded)="handlePostAdded($event)"></app-post-form>

@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-center my-5">
+  <div class="post-form-card p-4 rounded shadow-sm">
+    <h1 class="text-center mb-4">Add New Post</h1>
+    <form [formGroup]="postForm" class="w-100" style="max-width: 500px;">
+      <div class="mb-3">
+        <label for="userName" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Enter your name">
+      </div>
+
+      <div class="mb-3">
+        <label for="userImage" class="form-label">User Image URL</label>
+        <input type="text" class="form-control" id="userImage" formControlName="userImage" placeholder="Enter image URL">
+      </div>
+
+      <div class="mb-3">
+        <label for="postDescription" class="form-label">Post Description</label>
+        <textarea class="form-control" id="postDescription" formControlName="postDescription" rows="3" placeholder="Write something..."></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="postImage" class="form-label">Post Image URL</label>
+        <input type="text" class="form-control" id="postImage" formControlName="postImage" placeholder="Enter post image URL">
+      </div>
+
+      <button type="button" class="btn btn-success w-100" (click)="onsumbit()">Submit</button>
+    </form>
+  </div>
+</div>

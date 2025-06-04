@@ -1,0 +1,23 @@
+<h1 class="my-4 text-center">My form</h1>
+<div class="container">
+<form   [formGroup]="userDataservice.addUserForm" >
+  <div class="mb-4 justify-content-center">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="addUser">
+
+
+  </div>
+<button type="button" (click)="userDataservice.onAddUser()" class="btn btn-primary mt-5 w-100">Submit</button>
+
+</form>
+
+<!-- Delet User Form  -->
+<form [formGroup]="userDataservice.deleteUserForm">
+  <div class="mb-4 justify-content-center">
+    <label for="deleteUserInput" class="form-label">Delete User Email</label>
+    <input type="text" class="form-control" id="deleteUserInput" formControlName="deleteUser" />
+  </div>
+
+  <button type="button" (click)="userDataservice.onDeleteUser()" class="btn btn-danger mt-5 w-100">Delete</button>
+</form>
+</div>

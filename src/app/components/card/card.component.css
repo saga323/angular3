@@ -1,6 +1,11 @@
+.butn-delete{
+  margin-left: 200px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 
-.add-post-button{
-  height: 100px;
+}
+.btn-success{
+    height: 100px;
   width: 100px;
   align-items: center;
   justify-content:center;
@@ -14,7 +19,6 @@
   right: 20px;
   cursor: pointer;
   transition: all 0.2s;
+
 }
-.add-post-button:after{
-  transform: scale(1.1);
-}
+

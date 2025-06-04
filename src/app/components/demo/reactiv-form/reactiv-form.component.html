@@ -1,0 +1,26 @@
+<h1 class="my-4 text-center">My form</h1>
+
+<form  class="container" [formGroup]="loginForm" autocomplete="off">
+  <div class="mb-4 justify-content-center">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" [ngClass]="{'border-danger':constructorValidation(loginForm.controls.email,'requird ') ||constructorValidation(loginForm.controls.email,'pattern')}" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName='email'>
+    <span *ngIf="constructorValidation(loginForm.controls.email,'requird ') ||constructorValidation(loginForm.controls.email,'pattern')">Email is required</span>
+        <span *ngIf="isEmailmatchpattern">Email is no valid </span>
+
+  </div>
+  <div class="mb-4">
+    <label for="exampleInputPassword1" class="form-label ">Password</label>
+    <input type="password" class="form-control "  [ngClass]="{'border-danger':constructorValidation(loginForm.controls.email,'requird ') ||constructorValidation(loginForm.controls.email,'pattern')}" id="exampleInputPassword1"formControlName='password'>
+  </div>
+  <!-- <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" >
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> -->
+  <button type="submit" class="btn btn-primary mt-5 w-100" (click)="onsubmit()">Submit</button>
+    <button type="submit" class="btn btn-danger mt-5 w-100" (click)="onRest()">Reset</button>
+
+</form>
+
+
+
+<h1>{{user.email??''}}</h1>
